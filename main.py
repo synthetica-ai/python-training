@@ -3,7 +3,7 @@ from random import shuffle, sample
 
 suits = ['diamonds', 'hearts', 'spades', 'clubs']
 
-rank = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
 
 def createCard(combination):
     card = {}
@@ -22,8 +22,9 @@ def shuffleDeck(deck):
 def getHand(deck):
     hand = sample(deck, 5)
 
-    updatedDeck = list(map(deck.remove, hand))
-    return  hand, updatedDeck
+    map(deck.remove, hand)
+    
+    return  hand, deck
 
 deck = createDeck()
 
