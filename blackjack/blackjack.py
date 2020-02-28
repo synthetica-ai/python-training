@@ -1,8 +1,6 @@
 import random
-from make_deck import make_deck
-from cut_deck import cut_deck
-from count import count
-from check import check
+
+from utils import cut_deck, count, check, make_deck
 
 answer=(input("Do you want to cut the deck? Y/n \n")).lower()
 
