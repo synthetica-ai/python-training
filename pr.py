@@ -1,8 +1,9 @@
+
 def HandPowder(Hand):
     Num = []
     Suit = []
     a = []
-    k = 0
+    
     for i in range(0,5):
         Num.append(Hand[i][0])
         Suit.append(Hand[i][1])
@@ -63,68 +64,43 @@ def HandPowder(Hand):
         del(Num[k])
         del(Num[k])
         a.extend(Num)
+ 
+        
+                
+
+            
 
     return a            
 
 
-while True:
-    Answer = input("Do you want to play?(y/n)")
-    if Answer == "y":
-        break
-    elif Answer == "n":
-        print("see ya later nerd")
-    else:
-        print("Inconceivable")
-            
-import random
-Deck = []
-Decko = []
-HandA = []
-HandB = []
-PowerA = []
-PowerB = []
-for i in range(2,15):
-    for j in range(1,5):
-        Deck.append((i,j))
-               
-for i in range(0,52):
-    j = random.randint(0,len(Deck)-1)
-    Decko.append(Deck[j])
-    del Deck[j]
+testa = [(5, 3), (11, 1), (5, 4), (10, 1), (6, 3)]
+testb = [(2, 4), (12, 4), (12, 3), (13, 4), (4, 4)]
+ha = HandPowder(testa)
+hb = HandPowder(testb)
+print(ha)
+print(hb)
 
-for i in range(0,5):
-    HandA.append(Decko[i])
-    HandB.append(Decko[i+5])
-
-print(HandA, HandB)       
-
-PowerA = HandPowder(HandA)
-PowerB = HandPowder(HandB)
-
-if PowerA[0] > PowerB[0]:
+if ha[0] > hb[0]:
     print("O paixths A nikaei")
-elif PowerB[0] > PowerA[0]:
+elif hb[0] > ha[0]:
     print("O paixths B nikaei")
 else:
-    if PowerA == PowerB:
+    if ha == hb:
         print("exoume split")
     else:
-        for i in range(1,len(PowerA)):
-            if PowerA[i] != PowerB[i]:
+        for i in range(1,len(ha)):
+            if ha[i] != hb[i]:
                 break
-        if PowerA[i] > PowerB[i]:
+        if ha[i] > hb[i]:
             print("o paixths A nikaei")
         else:
             print("o paixths B nikaei")
-                    
+            
+        
+                     
 
 
-         
 
 
 
     
-    
-               
-   
-      
