@@ -10,19 +10,17 @@ def cut_deck(deck, cut_point):
 
 
 def count(deck,hand,i,Flag):
-    if deck[i][0]==14 and (hand+11)<21:
-        hand+=11
-        i+=1
-        Flag==True
-    elif deck[i][0]==14 and Flag==True :
-        hand+=11
-        i+=1
-    elif deck[i][0]==14:
-        hand+=1
-        i+=1
+    if deck[i][0]==14:
+        if (hand+11)<=21 or Flag==True:
+            hand+=11
+            i+=1
+        else:
+            hand+=1
+            i+=1
+        Flag=True
     elif deck[i][0]>=10:
         hand+=10
-        i+=i
+        i+=1
     else:
         hand+=deck[i][0]
         i+=1
