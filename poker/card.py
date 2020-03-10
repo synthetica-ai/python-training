@@ -4,4 +4,4 @@ class Card:
         self.suit=suit
 
     def __str__(self):
-        return {self.rank:self.suit}
+        return {'rank':self.rank,'suit':self.suit}

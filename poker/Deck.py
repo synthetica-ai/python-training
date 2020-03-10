@@ -19,7 +19,6 @@ class Deck:
     def deck_shuffle(self):
         shuffle(self.cards)
 
-
     def take_hand(self):
         h=list(sample(self.cards,5))
         for k in h:
@@ -27,18 +26,12 @@ class Deck:
         return h
 
 def suits(k):
-    def func(i):
-        for k in i.values():
-            return k
-    new_l=list(map(func, k))
+    new_l=list(map(lambda x: x['suit'], k))
     flag=reduce(lambda x,y: x if x==y else 0 ,new_l)
     return bool(flag)
 
 def sort_hand(k):
-    def func(i):
-        for k in i.keys():
-            return k
-    new_l=list(map(func, k))
+    new_l=list(map(lambda x:x['rank'], k))
     return new_l
 
 def evaluate(s,r):
@@ -50,7 +43,7 @@ def evaluate(s,r):
     four=True if max_times==4 else False
     full=True if (max_times==3 and len(c)==2)  else False
     straight=s
-    three=True if max(c.values())==3 else False
+    three=True if max_times==3 else False
     two_pairs=True if max_times==2 and len(c)==3 else False
     pair=True if max_times==2 else False
     eval=[straight and flush,

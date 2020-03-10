@@ -1,5 +1,6 @@
-from Deck import *
+from operator import itemgetter
 
+from Deck import *
 
 deck1=Deck()
 
@@ -8,8 +9,8 @@ deck1.deck_shuffle()
 hand1=deck1.take_hand()
 hand2=deck1.take_hand()
 
-print(hand1)
-print(hand2)
+print(sorted(hand1, key=itemgetter('rank'), reverse=True))
+print(sorted(hand2, key=itemgetter('rank'), reverse=True))
 
 suit_h1=suits(hand1)
 suit_h2=suits(hand2)
