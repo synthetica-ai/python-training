@@ -1,0 +1,3 @@
+Practice Python coding with fun, bite-sized challenges.It's like Duolingo for learning to code.
+You can learn very fast
+https://edabit.com/
